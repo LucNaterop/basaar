@@ -2,13 +2,10 @@
 
 	<ion-header-bar>
 		<h1 class="title">Neues Angebot</h1>
+        <div class="button button-clear" ng-click="closeModal()"><span class="icon ion-close"></span></div>
 	</ion-header-bar>
-	<!-- Navbar Buttons -->
-	<ion-nav-buttons side="right">
-		<a class="button button-clear button-icon ion-plus-round" ng-click="Browse.createPost()"></a>
-	</ion-nav-buttons>
 
-	<ion-content>
+	<ion-content class="padding">
 		<div class="list">
 			<label class="item item-input">
 				<input type="text" placeholder="Titel">
@@ -17,6 +14,26 @@
 				<textarea rows="10" placeholder="Beschreibung"></textarea>
 			</label>
 		</div>
+
+
+		<h3>Bilder</h3>
+		<button class="button button-positive icon-left ion-camera">Foto hinzufügen</button>
+		<h3>Kategorien</h3>
+		<ion-checkbox ng-model="katModeChecked">Mode</ion-checkbox>
+		<ion-checkbox ng-model="katMoebelChecked">Möbel</ion-checkbox>
+		<ion-checkbox ng-model="katFreizeit">Freizeit & Sport</ion-checkbox>
+		<ion-checkbox ng-model="katKueche">Küche & Haushalt</ion-checkbox>
+		<ion-checkbox ng-model="katElektronik">Elektronik</ion-checkbox>
+		<ion-checkbox ng-model="katGarten">Garten</ion-checkbox>
+		<ion-checkbox ng-model="katFilme">Filme, Musik, Games & Bücher</ion-checkbox>
+		<ion-checkbox ng-model="katAntiquitaeten">Antiquitäten & Kunst</ion-checkbox>
+		<ion-checkbox ng-model="katMusikinstrumente">Musikinstrumente und Zubehör</ion-checkbox>
+		<ion-checkbox ng-model="katAuto">Auto & Motorrad</ion-checkbox>
+		<ion-checkbox ng-model="katSonstiges">Sonstiges</ion-checkbox>
+
+		<button class="button button-positive button-block">Absenden</button>
 	</ion-content>
+
+
 
 </ion-modal-view>

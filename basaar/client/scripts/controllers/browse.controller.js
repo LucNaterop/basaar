@@ -1,5 +1,13 @@
-angular.module('basaar').controller('BrowseController', function($scope, $ionicActionSheet, $ionicModal){
+angular.module('basaar').controller('BrowseController', function($scope, $reactive, $ionicActionSheet, $ionicModal){
 	var self = this;
+	$reactive(this).attach($scope);
+
+	self.helpers({
+		posts(){
+			return Posts.find();
+		}
+	});
+
 
 	self.createPost = function(){
 		$ionicActionSheet.show({
@@ -7,8 +15,8 @@ angular.module('basaar').controller('BrowseController', function($scope, $ionicA
 				{ text: '<b>Angebot</b> erstellen' },
 				{ text: '<b>Nachfrage</b> erstellen' }
 			],
-			titleText: 'Angebot oder Nachfrage?',
-			cancelText: 'Cancel',
+			titleText: 'Was möchtest du hinzufügen?',
+			cancelText: 'Abbrechen',
 			buttonClicked: function(index) {
 				if(index == 0){
 
@@ -28,7 +36,12 @@ angular.module('basaar').controller('BrowseController', function($scope, $ionicA
 				return true;
 			}
 		});
+	};
 
+	// ----- Create Post Methods -------
+
+	$scope.closeModal = function(){
+		$scope.modal.hide();
 	};
 
 });
