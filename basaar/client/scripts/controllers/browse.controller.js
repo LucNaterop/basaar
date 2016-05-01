@@ -20,7 +20,7 @@ angular.module('basaar').controller('BrowseController', function($scope, $reacti
 				if(index == 0){
 					$state.go('notabs.createpost');
 				} else if(index == 1){
-					console.log('index 1');
+					$state.go('notabs.createrequest');
 				}
 				return true;
 			}

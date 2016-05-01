@@ -26,3 +26,6 @@ accounts-password
 msavin:mongol
 simple:imgur
 mdg:camera
+
+accounts-facebook
+dotansimha:accounts-ui-angular

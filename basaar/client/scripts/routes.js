@@ -7,13 +7,13 @@ angular.module('basaar').config(function($stateProvider, $urlRouterProvider){
 	$stateProvider.state('tab', {
 		url: '/tab',
 		abstract: true,
-		templateUrl: 'client/templates/tabs.html'
+		templateUrl: 'client/templates/abstract-tabs.html'
 	}); 
 
 	$stateProvider.state('notabs', {
-		url: '/notabs',
+		url: '',
 		abstract: true,
-		templateUrl: 'client/templates/notabs.html'
+		templateUrl: 'client/templates/abstract-notabs.html'
 	});
 
 	// ----------- TABS -------------
@@ -70,4 +70,34 @@ angular.module('basaar').config(function($stateProvider, $urlRouterProvider){
 		}
 	});
 
+	$stateProvider.state('notabs.createrequest', {
+		url: '/createrequest',
+		views: {
+			'notabs': {
+				templateUrl: 'client/templates/createpost.html',
+				controller: 'CreatePostController as CreatePost'
+			}
+		}
+	});
+
+	$stateProvider.state('notabs.post', {
+		url: '/post/:postId',
+		views: {
+			'notabs': {
+				templateUrl: 'client/templates/post.html',
+				controller: 'PostController as Post'
+			}
+		}
+	});
+
+	$stateProvider.state('notabs.login', {
+		url: '/login',
+		views: {
+			'notabs': {
+				templateUrl: 'client/templates/login.html',
+				controller: 'LoginController as Login'
+			}
+		}
+	});
 });
+

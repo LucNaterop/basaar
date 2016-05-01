@@ -7,9 +7,8 @@
 	</ion-nav-buttons>
 
 	<ion-content>
-
 		<ion-list>
-			<ion-item class="item-icon-right item-thumbnail-left" ng-repeat="post in Browse.posts">
+			<ion-item class="item-icon-right item-thumbnail-left" ng-repeat="post in Browse.posts" ui-sref="notabs.post({postId: post._id })">
 				<img src="http://i.imgur.com/{{post.imageIDs[0]}}b.jpg" ng-if="post.imageIDs[0]">
 				<img src="http://i.imgur.com/63f1Hotb.jpg" ng-if="!post.imageIDs[0]">
 				<h2>{{post.title}}</h2>

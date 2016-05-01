@@ -1,5 +1,6 @@
 
 Posts			= new Mongo.Collection ('posts');
+Requests		= new Mongo.Collection ('requests');
 PostDiscussions = new Mongo.Collection ('postdiscussions');
 Notifications 	= new Mongo.Collection ('notifications');
 Messages		= new Mongo.Collection ('messages');

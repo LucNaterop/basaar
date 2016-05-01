@@ -5,12 +5,22 @@ angular.module('basaar').controller('CreatePostController', function($scope, $re
 
 	self.newPost = {};
 
+	if($state.current.name == 'notabs.createpost'){
+		self.type = 'Angebot';
+	} else {
+		self.type = 'Nachfrage';
+	}
 	self.newPost.title = '';
 	self.newPost.description = '';
 	self.newPost.imageIDs = [];
 
 	self.absenden = function(newPost){
-		Posts.insert(newPost);
+
+		if(self.type == 'Angebot'){
+			Posts.insert(newPost);
+		} else {
+			Requests.insert(newPost);
+		}
 
 		self.newPost.title = '';
 		self.newPost.description = '';

@@ -1,0 +1,14 @@
+<ion-view title="{{CreatePost.type}}">
+	<!-- if has interest then subheader -->
+	<ion-content class="padding">	
+		<div class="card">
+			<a style="text-decoration: none" href="/user/{{Post.userID}}">
+				<div class="item item-avatar">
+					<img src="{{Post.userPicture}}">
+					<h2>{{Post.userName}}</h2>
+					<p style="font-style: italic">{{Post.dateString}}</p>
+				</div>
+			</a>
+		</div>
+	</ion-content>
+</ion-view>
