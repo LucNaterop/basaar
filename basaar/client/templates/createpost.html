@@ -1,0 +1,42 @@
+<ion-view title="Neues Angebot">
+
+	<ion-nav-buttons side="left">
+		<a class="button button-clear button-icon ion-ios-arrow-back" href="/"></a>
+	</ion-nav-buttons>
+
+	<ion-content class="padding">
+		<form name="newPostForm">
+			<div class="list">
+				<label class="item item-input">
+					<input type="text" placeholder="Titel" ng-model="CreatePost.newPost.title" ng-minlength="3" required>
+				</label>
+				<label class="item item-input">
+					<textarea rows="10" placeholder="Beschreibung" ng-model="CreatePost.newPost.description" ng-minlength="5" required></textarea>
+				</label>
+			</div>
+			<h3>Bilder</h3>
+			<button class="button button-positive icon-left ion-camera" ng-click="CreatePost.addPicture()">Foto hinzufügen</button>
+
+			<div class="item item-button-right" ng-repeat="imageID in CreatePost.newPost.imageIDs">
+				<img style='margin-right: 10px' src='http://i.imgur.com/{{imageID}}s.jpg'>
+				<button id="{{this}}" class="removeImage button button-assertive button-clear">
+				<i class="icon ion-close-round"></i>
+				</button>
+			</div>
+
+
+			<button class="button button-positive button-block" ng-disabled="newPostForm.$invalid" ng-click="CreatePost.absenden(CreatePost.newPost)">Absenden</button>
+
+			<!-- TODO: error messages 
+		        <div class="padding">
+		            <p ng-show="newPostForm.username.$error.required">* Username is required</p>
+		            <p ng-show="newPostForm.username.$invalid && !newPostForm.username.$pristine">* Username must be an email address</p>
+		            <p ng-show="newPostForm.username.$error.minlength">* Username must be longer than 5 characters</p>
+		            <p ng-show="newPostForm.password.$error.required">* Password is required</p>
+		            <p ng-show="newPostForm.password.$error.minlength">* Password must be longer than 6 characters</p>
+		        </div>
+			-->
+
+		</form>
+	</ion-content>
+</ion-view>

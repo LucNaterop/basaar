@@ -2,13 +2,19 @@ angular.module('basaar').config(function($stateProvider, $urlRouterProvider){
 
 	$urlRouterProvider.otherwise('/tab/browse');
 
-	// ABSTRACT state for tabs
+	// ABSTRACT states for tab and notab
 
 	$stateProvider.state('tab', {
 		url: '/tab',
 		abstract: true,
 		templateUrl: 'client/templates/tabs.html'
 	}); 
+
+	$stateProvider.state('notabs', {
+		url: '/notabs',
+		abstract: true,
+		templateUrl: 'client/templates/notabs.html'
+	});
 
 	// ----------- TABS -------------
 
@@ -48,6 +54,18 @@ angular.module('basaar').config(function($stateProvider, $urlRouterProvider){
 			'tab-chats': {
 				templateUrl: 'client/templates/tab-chats.html',
 				controller: 'ChatsController as Chats'
+			}
+		}
+	});
+
+	// ------- NOTABS ---------
+
+	$stateProvider.state('notabs.createpost', {
+		url: '/createpost',
+		views: {
+			'notabs': {
+				templateUrl: 'client/templates/createpost.html',
+				controller: 'CreatePostController as CreatePost'
 			}
 		}
 	});

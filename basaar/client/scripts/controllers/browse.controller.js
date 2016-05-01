@@ -1,4 +1,4 @@
-angular.module('basaar').controller('BrowseController', function($scope, $reactive, $ionicActionSheet, $ionicModal){
+angular.module('basaar').controller('BrowseController', function($scope, $reactive, $state, $ionicViewSwitcher, $ionicActionSheet, $ionicModal){
 	var self = this;
 	$reactive(this).attach($scope);
 
@@ -7,7 +7,6 @@ angular.module('basaar').controller('BrowseController', function($scope, $reacti
 			return Posts.find();
 		}
 	});
-
 
 	self.createPost = function(){
 		$ionicActionSheet.show({
@@ -19,19 +18,9 @@ angular.module('basaar').controller('BrowseController', function($scope, $reacti
 			cancelText: 'Abbrechen',
 			buttonClicked: function(index) {
 				if(index == 0){
-
-					// open modal
-					$ionicModal.fromTemplateUrl('client/templates/modals/create-post.html', {
-						scope: 						$scope,
-						backdropClickToClose: 		false,
-						hardwareBackButtonClose: 	false,
-						animation: 					'slide-in-up'
-					}).then(function (modal){
-						$scope.modal = modal;
-						modal.show();
-					});
-
+					$state.go('notabs.createpost');
 				} else if(index == 1){
+					console.log('index 1');
 				}
 				return true;
 			}
