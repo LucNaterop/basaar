@@ -99,5 +99,15 @@ angular.module('basaar').config(function($stateProvider, $urlRouterProvider){
 			}
 		}
 	});
+
+	$stateProvider.state('notabs.profile', {
+		url: '/profile',
+		views: {
+			'notabs': {
+				templateUrl: 'client/templates/profile.html',
+				controller: 'ProfileController as Profile'
+			}
+		}
+	});
 });
 

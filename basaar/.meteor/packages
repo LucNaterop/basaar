@@ -10,7 +10,6 @@ mongo                   # The database Meteor supports right now
 reactive-var            # Reactive variable for tracker
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
-
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 
 autopublish             # Publish all data to the clients (for prototyping)
@@ -19,13 +18,13 @@ standard-minifier-css
 standard-minifier-js
 
 angular
+angular-templates
 driftyco:ionic
 fourseven:scss
-useraccounts:core
-accounts-password
 msavin:mongol
 simple:imgur
 mdg:camera
 
-accounts-facebook
+accounts-password
+accounts-ui
 dotansimha:accounts-ui-angular

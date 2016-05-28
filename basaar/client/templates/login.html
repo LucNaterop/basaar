@@ -6,14 +6,15 @@
       </div>
 
       <label class="item item-input">
-        <input type="text" ng-model="credentials.username" placeholder="UserName" />
+        <input type="text" ng-model="Login.credentials.username" placeholder="Login.UserName" />
       </label>
       <label class="item item-input">
-        <input type="password" ng-model="credentials.password" placeholder="Password" />
+        <input type="password" ng-model="Login.credentials.password" placeholder="Login.Password" />
       </label>
+      <p>{{Login.credentials}}</p>
       <div class="padding">
-        <button class="button button-block" ng-click="doLoginAction()">Login</button>
-        <button class="button button-block" ng-click="doCreateAccountAction()">Create Account</button>
+        <button class="button button-block" ng-click="Login.doLoginAction()">Login</button>
+        <button class="button button-block" ng-click="Login.doCreateAccountAction()">Create Account</button>
       </div>
     </ion-item>
   </ion-content>

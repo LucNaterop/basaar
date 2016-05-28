@@ -1,4 +1,4 @@
-angular.module('basaar', ['angular-meteor', 'ionic', 'accounts.ui']);
+angular.module('basaar', ['angular-meteor', 'ionic']);
 
 if (Meteor.isCordova) {
   angular.element(document).on('deviceready', onReady);
